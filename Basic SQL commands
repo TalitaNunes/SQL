@@ -1,0 +1,101 @@
+# Basic SQL commands 
+# comandos básicos de SQL
+
+
+# SQL (“Structured Query Language”) is a standard language for working with relational databases
+# SQL (“Structured Query Language”) é uma linguagem padrão para trabalhar com bancos de dados relacionais
+
+# The following are the main SQL commands for database queries
+# A seguir, os principais comandos SQL para consultas em bancos de dados
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Basics commands
+
+# 1- SELECT 
+# 2- DISTINCT
+# 3- WHERE
+# 4- AND, OR, NOT
+# 5- ORDER BY
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 1 - SELECT
+# The SQL SELECT Statement
+# A instrução SQL SELECT
+
+# The SELECT statement is used to select data from a database, the returned data is stored in a result table, called a result set.
+# A instrução SELECT é usada para selecionar dados de um banco de dados, os dados retornados são armazenados em uma tabela de resultados, chamada de conjunto de resultados.
+
+# columns are the fields of a table in a database, and table_name indicates which table
+# colunas são os campos de uma tabela em um banco de dados, e table_name indica o qual é a tabela 
+
+# Example 1
+SELECT column1, column2, column3, ...
+FROM table_name;
+
+# Example 2
+SELECT name, age, adress, ...
+FROM table_students;
+
+
+# It´s possible to apply a * instead of declaring the columns, and in this way, all the columns of the table will be returned
+# é possível aplicar  um * ao invés de declarar as colunas, e desta forma, todas as colunas da tabela serão retornadas
+
+
+# Example 3
+SELECT *
+FROM table_students;
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 2 - DISTINCT
+# The SQL DISTINCT Statement
+# A instrução SQL DISTINCT
+
+
+# The SELECT DISTINCT statement is used to return only distinct (different) values
+# Inside a table, a column often contains many duplicate values; and sometimes you only want to list the different (distinct) values
+
+# A instrução SELECT DISTINCT é usada para retornar apenas valores distintos (diferentes)
+# Dentro de uma tabela, uma coluna geralmente contém muitos valores duplicados, e às vezes você só quer listar os valores diferentes (distintos)
+
+
+# Example 1 (in this example the query looks for the distinct names of the students table)
+# Example 1 (neste exemplo a query consulta os nomes distintos da tabela estudantes)
+
+SELECT DISTINCT name
+FROM table_students;
+
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# 3 - WHERE
+# The SQL WHERE Statement
+# A instrução SQL WHERE
+
+
+# The SELECT WHERE statement allows the insertion of filters in the query (this command always comes after the FROM)
+# A instrução SELECT WHERE permite a inserção de filtros na consulta (este comando sempre vem depois do FROM)
+
+
+# Example 1 (return the name of employees whose salary is less than 5000)
+# Example 1 (retorna o nome dos funcionários, cujo salário é menor que 5000)
+
+SELECT name, salary
+FROM table_payments
+WHERE salary < 5000
+
+
+# Example 2 (return name of people over 30 years old)
+# Example 2 (retorne nome das pessoas acima de 30 anos)
+
+SELECT name, age, nationality
+FROM table_customers
+WHERE age > 30
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
