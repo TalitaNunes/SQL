@@ -99,3 +99,90 @@ WHERE age > 30
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# 4 - AND, OR, NOT
+
+# The WHERE clause can be combined with AND, OR, and NOT operators.
+
+# The AND and OR operators are used to filter records based on more than one condition:
+#   The AND operator displays a record if all the conditions separated by AND are TRUE.
+#   The OR operator displays a record if any of the conditions separated by OR is TRUE.
+#   The NOT operator displays a record if the condition(s) is NOT TRUE.
+
+
+# A cláusula WHERE pode ser combinada com os operadores AND, OR e NOT.
+
+# Os operadores AND e OR são usados para filtrar registros com base em mais de uma condição:
+# O operador AND exibe um registro se todas as condições separadas por AND forem TRUE.
+# O operador OR exibe um registro se alguma das condições separadas por OR for TRUE.
+# O operador NOT exibe um registro se a(s) condição(ões) for NOT TRUE.
+
+
+
+# Example 1 (AND)
+
+# imagine that you are working for a basketball team, and you need to search in a database of schools,
+# in the table_students, search for, Brazilian boys, over 15 years old with height over 1.80 m
+
+# imagine que você está trabalhando para um time de basquete e precisa pesquisar em um banco de dados de escolas,
+# na tabela_alunos, procure, meninos brasileiros, maiores de 15 anos e estatura acima de 1,80 m
+
+SELECT name, last_name, age, adress, height, nationality, gender, ...
+FROM table_students
+WHERE condition1 (nationality) = 'Brazil' AND condition2 (age) > 15 AND condition3 (height) > 1.80 AND condition4 (gender) = 'Male'
+
+
+
+# Example 2 (OR)
+
+# imagine that you need to find all car models, in a database, whose colors are red, black and blue
+# imagine que você precisa localizar todos os modelos de carro, em um banco de dados, cuja as cores sejam vermelho, preto e azul
+
+
+SELECT car, year_manufacture, color, type_fuel ...
+FROM table_cars
+WHERE condition1 (color) = 'Red' OR condition2 (color) = 'Black' OR condition3 (color) = 'Blue' 
+
+
+
+# Example 3 (NOT)
+
+# imagine that you need to search, in a database, all orders placed, except those that have not yet been paid
+# imagine que você precisa pesquisar, em um banco de dados, todos os pedidos realizados, exceto os que ainda não foram pagos
+
+
+SELECT orders, data_order, order_type, item_description, status, ...
+FROM table_orders
+WHERE condition1 (status) NOT IN  ('Pending')  
+
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 5 - ORDER BY
+
+# The ORDER BY clause is used to sort the result-set in ascending or descending order
+# The sorts are in ascending order by default. To sort the records in descending order, use the DESC keyword
+
+
+# A cláusula ORDER BY é usada para classificar o conjunto de resultados em ordem crescente ou decrescente
+# As classificações estão em ordem crescente por padrão. Para classificar os registros em ordem decrescente, use a palavra-chave DESC
+
+
+# in the following example, the query will be sorted by the name column, in ascending order, that is, alphabetically, in this case
+# no exemplo a seguir, a consulta será classificada pela coluna de nome, em ordem crescente, ou seja, em ordem alfabética, neste caso
+
+# Example 1
+SELECT name, last_name, age, ...
+FROM table_name
+ORDER BY name
+
+
+# in this other example, the query will be sorted by the country column in descending order
+# neste outro exemplo, a consulta será ordenada pela coluna país em ordem decrescente
+
+# Example 2
+SELECT country, city, state, ...
+FROM table_country
+ORDER BY country DESC
+
+
