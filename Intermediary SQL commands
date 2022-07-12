@@ -1,0 +1,43 @@
+
+# Following explanation and very useful examples of intermediate SQL commands
+# A seguir, explicação, e exemplos muito úteis de comandos intermediários de SQL
+
+
+# Commands to specify number of query return lines
+# Comandos para especificar número de linhas de retorno da consulta
+
+# 1- TOP
+# 2- LIMIT
+# 3- FETCH FIRST
+# 4- ROWNUM
+
+# Commands to apply calculations in the query
+# Comandos para aplicar cálculos na consulta
+
+# 1- MIN
+# 2- MAX
+# 3- COUNT
+# 4- AVG
+# 5- SUM
+# 6- MEDIAN
+
+# Commands for conditional queries and advanced filters
+# Comandos para consultas condicionais e filtros avançados
+
+# 1- CASE WHEN
+# 2- LIKE
+# 3- IN
+# 4- BETWEEN 
+# 5- HAVING
+
+# Commands for handling null values
+# Comandos para tratamento de valores nulos
+
+# 1- ISNULL (SQL Server)
+# 2- IFNULL (MySQL)
+# 3- COALESCE (SQL Oracle)
+
+
+
+
+
