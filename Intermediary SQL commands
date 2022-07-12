@@ -3,39 +3,107 @@
 # A seguir, explicação, e exemplos muito úteis de comandos intermediários de SQL
 
 
-# Commands to specify number of query return lines
-# Comandos para especificar número de linhas de retorno da consulta
+# 1
+# Commands to specify the number of rows to return from the query, this is useful in large tables with thousands of records,
+# even improving query performance, especially when there is no knowledge about the database
 
-# 1- TOP
-# 2- LIMIT
-# 3- FETCH FIRST
-# 4- ROWNUM
+# Comandos para especificar o número de linhas de retorno da consulta, isso é útil em tabelas grandes com milhares de registros, 
+# melhorando inclusive a performance da consulta, principalmente quando não se tem um conhecimento sobre o banco de dados
 
+
+# 1.1- TOP (SQL Server)
+# 1.1- Example (filtering 10 record lines)
+
+SELECT TOP 10 
+column_1, column_2, column_3, ...
+FROM table_name
+
+
+# 1.2- LIMIT (MySQL)
+# 1.2- Example (filtering 20 record lines)
+
+SELECT column_1, column_2, column_3, ...
+FROM table_name
+WHERE column_1 > 10
+LIMIT 20
+
+
+# 1.3- FETCH FIRST
+# 1.3- Example (filtering 5 record lines)
+
+SELECT column_1, column_2, column_3, ...
+FROM table_name
+ORDER BY column_1
+FETCH FIRST 5 ROWS ONLY
+
+
+# 1.4- ROWNUM
+# 1.4- Example (filtering <=15 record lines)
+
+SELECT column_1, column_2, column_3, ...
+FROM table_name
+WHERE ROWNUM <= 15
+
+
+
+# 2
 # Commands to apply calculations in the query
 # Comandos para aplicar cálculos na consulta
 
-# 1- MIN
-# 2- MAX
-# 3- COUNT
-# 4- AVG
-# 5- SUM
-# 6- MEDIAN
+# 2.1- MIN
+# 2.1- Example (query in the database, of the employee with the lowest salary)
 
+SELECT MIN(salary), name, age, employee, status
+FROM table_employees
+WHERE status = 'active'
+
+
+# 2.2- MAX
+# 2.2- Example (query in the database, of the employee with the highest salary)
+
+SELECT MAX(salary), name, age, employee, status
+FROM table_employees
+
+
+# 2.3- COUNT
+# 2.3- Example (query in the database, number of orders)
+
+SELECT COUNT(id_order), wine_type, date, store, ...
+FROM table_wines
+
+
+# 2.4- AVG
+# 2.4- Example (query in the database, average age of employees)
+
+SELECT AVG(age), name, employee, status, ...
+FROM table_employees
+
+
+# 2.5- SUM
+# 2.5- Example (sum, the quantity of wines sold)
+
+SELECT SUM(qty_wine), wine_type, date, store, ...
+FROM table_wines
+
+
+
+# 3
 # Commands for conditional queries and advanced filters
 # Comandos para consultas condicionais e filtros avançados
 
-# 1- CASE WHEN
-# 2- LIKE
-# 3- IN
-# 4- BETWEEN 
-# 5- HAVING
+# 3.1- CASE WHEN
+# 3.2- LIKE
+# 3.3- IN
+# 3.4- BETWEEN 
+# 3.5- HAVING
 
+# 4
 # Commands for handling null values
 # Comandos para tratamento de valores nulos
 
-# 1- ISNULL (SQL Server)
-# 2- IFNULL (MySQL)
-# 3- COALESCE (SQL Oracle)
+# 4.1- ISNULL (SQL Server)
+# 4.2- IFNULL (MySQL)
+# 4.3- COALESCE (SQL Oracle)
 
 
 
