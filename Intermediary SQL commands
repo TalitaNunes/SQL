@@ -166,7 +166,7 @@ WHERE CustomerName LIKE '%a'
 
 # 3.2- Example 4 (using %)
 # The following SQL statement selects all customers with a CustomerName that have "or" in any position
-# A instrução SQL a seguir seleciona todos os clientes com um CustomerName que tenham "ou" em qualquer posição
+# A instrução SQL a seguir seleciona todos os clientes com um CustomerName que tenham "or" em qualquer posição
 
 SELECT * FROM Customers
 WHERE CustomerName LIKE '%or%'
@@ -182,7 +182,7 @@ WHERE CustomerName LIKE '_r%'
 
 # 3.2- Example 6 (using _)
 # The following SQL statement selects all customers with a CustomerName that starts with "a" and are at least 3 characters in length
-# A instrução SQL a seguir seleciona todos os clientes com um CustomerName que começa com "a" e tem pelo menos 3 caracteres de comprimentox'
+# A instrução SQL a seguir seleciona todos os clientes com um CustomerName que começa com "a" e tem pelo menos 3 caracteres de comprimento
 
 SELECT * FROM Customers
 WHERE CustomerName LIKE 'a__%'
@@ -258,7 +258,6 @@ WHERE ProductName BETWEEN 'Cheetos' AND 'Pringles'
 ORDER BY ProductName
 
 
-
 # 3.5- HAVING
 # The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions
 # A cláusula HAVING foi adicionada ao SQL porque a palavra-chave WHERE não pode ser usada com funções agregadas
@@ -271,7 +270,6 @@ SELECT COUNT(CustomerID), Country
 FROM Customers
 GROUP BY Country
 HAVING COUNT(CustomerID) > 5
-
 
 
 # 3.5- Example 2
@@ -335,7 +333,6 @@ WHERE Address IS NOT NULL
 # 4.2- Example
 SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0))
 FROM Products
-
 
 
 # 4.3- COALESCE (SQL Oracle)
