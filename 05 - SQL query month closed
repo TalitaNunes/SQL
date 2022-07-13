@@ -1,0 +1,14 @@
+
+# the example below, performed SQL query closed month, the range is from the first day to the last day of the month, prior to the current one
+# o exemplo abaixo, realiza uma consulta em SQL do mês fechado, o range é, desde o primeiro dia até o último dia do mês anterior ao atual
+
+
+# for example, suppose today is 2022-01-01, then the query will bring the data for the period from, 2021-12-01 to 2021-12-31
+# por exemplo, suponhamos que hoje é 01-01-2022, então a consulta trará os dados do período de, 01-12-2021 até 31-12-2021
+
+SELECT
+ID-CLIENT,
+ORDER,
+TO_CHAR (ORDER_DATE,'DD/MM/YYYY HH24:MI:SS')
+FROM TABLE_ORDER
+WHERE ORDER_DATE BETWEEN TRUNC(ADD_MONTHS(SYSDATE, -1),'MM') AND LAST_DAY( ADD_MONTHS(SYSDATE , -1))  
