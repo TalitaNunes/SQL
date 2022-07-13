@@ -1,0 +1,115 @@
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+
+# below are some commands for advanced SQL queries
+# a seguir, alguns comandos para consultas avançadas de SQL
+
+
+# a database is composed of more than one table,in a relational database,
+# using join functions makes it possible to join information from different tables, these joins are:
+
+# um banco de dados é composto por mais de uma tabela, em um banco de dados relacional,
+# usando funções de junção torna possível juntar informações de diferentes tabelas, essas junções são:
+
+
+# Commands
+# 1- (INNER) JOIN
+# 2- LEFT (OUTER) JOIN
+# 3- RIGHT (OUTER) JOIN
+# 4- FULL (OUTER) JOIN
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+
+# 1- INNER JOIN
+# The INNER JOIN keyword selects records that have matching values in both tables
+# A palavra-chave INNER JOIN seleciona registros que possuem valores correspondentes em ambas as tabelas
+
+
+# 1- Example 
+# The following SQL statement selects all orders with customer information:
+# A seguinte instrução SQL seleciona todos os pedidos com informações do cliente:
+
+# the customerID column (field) exists both in the orders table and in the customer table,
+# so it is possible to consult the data of both tables, applying the join between them
+
+# a coluna (campo) customerID existe tanto na tabela orderns como na tabela customer, 
+# por isso é possível consultar os dados de ambas tabelas, aplicando o join entre elas
+
+SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+
+# 2- LEFT JOIN
+# The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right table (table2). 
+# The result is 0 records from the right side, if there is no match.
+
+# A palavra-chave LEFT JOIN retorna todos os registros da tabela da esquerda (tabela1) e os registros correspondentes da tabela da direita (tabela2). 
+# O resultado é 0 registros do lado direito, se não houver correspondência.
+
+
+# 2- Example
+# The LEFT JOIN keyword returns all records from the left table (Customers), even if there are no matches in the right table (Orders)
+# A palavra-chave LEFT JOIN retorna todos os registros da tabela da esquerda (Clientes), mesmo que não haja correspondências na tabela da direita (Pedidos)
+
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+ORDER BY Customers.CustomerName
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+
+# 3- RIGHT JOIN
+# The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records from the left table (table1). 
+# The result is 0 records from the left side, if there is no match.
+
+# A palavra-chave RIGHT JOIN retorna todos os registros da tabela direita (tabela2) e os registros correspondentes da tabela esquerda (tabela1). 
+# O resultado é 0 registros do lado esquerdo, se não houver correspondência.
+
+
+# 3- Example
+# The RIGHT JOIN keyword returns all records from the right table (Employees), even if there are no matches in the left table (Orders)
+# A palavra-chave RIGHT JOIN retorna todos os registros da tabela da direita (Employees), mesmo que não haja correspondências na tabela da esquerda (Orders)
+
+SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+FROM Orders
+RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+ORDER BY Orders.OrderID
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+
+# 4- FULL JOIN 
+# The FULL OUTER JOIN keyword returns all records when there is a match in left (table1) or right (table2) table records
+# Tip: FULL OUTER JOIN and FULL JOIN are the same
+
+# A palavra-chave FULL OUTER JOIN retorna todos os registros quando há uma correspondência nos registros da tabela esquerda (tabela1) ou direita (tabela2)
+# Dica: FULL OUTER JOIN e FULL JOIN são iguais
+
+
+# 4- Example
+# The following SQL statement selects all customers, and all orders:
+# A seguinte instrução SQL seleciona todos os clientes e todos os pedidos:
+
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+ORDER BY Customers.CustomerName
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
