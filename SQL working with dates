@@ -1,0 +1,73 @@
+
+
+# The most difficult part when working with dates is to be sure that the format of the date you are trying to insert, 
+# matches the format of the date column in the database.
+
+# A parte mais difícil ao trabalhar com datas é ter certeza de que o formato da data que você está tentando inserir 
+# corresponde ao formato da coluna de data no banco de dados.
+
+# -----------------------------------------------------------------------------------------------------------------------------
+
+# SQL Date Data Types
+
+# -----------------------------------------------------------------------------------------------------------------------------
+# MySQL comes with the following data types for storing a date or a date/time value in the database:
+# MySQL vem com os seguintes tipos de dados para armazenar uma data ou um valor de data/hora no banco de dados:
+
+DATE - format YYYY-MM-DD
+DATETIME - format: YYYY-MM-DD HH:MI:SS
+TIMESTAMP - format: YYYY-MM-DD HH:MI:SS
+YEAR - format YYYY or YY
+
+
+# -----------------------------------------------------------------------------------------------------------------------------
+# SQL Server comes with the following data types for storing a date or a date/time value in the database:
+# SQL Server vem com os seguintes tipos de dados para armazenar uma data ou um valor de data/hora no banco de dados:
+
+DATE - format YYYY-MM-DD
+DATETIME - format: YYYY-MM-DD HH:MI:SS
+SMALLDATETIME - format: YYYY-MM-DD HH:MI:SS
+TIMESTAMP - format: a unique number
+
+
+# Note: The date types are chosen for a column when you create a new table in your database!
+# Nota: Os tipos de data são escolhidos para uma coluna quando você cria uma nova tabela em seu banco de dados!
+
+
+# Example 
+SELECT * FROM Orders WHERE OrderDate='1990-01-30'
+
+# -----------------------------------------------------------------------------------------------------------------------------
+
+# how to find the range of days between two dates:
+# como encontrar o intervalo de dias entre duas datas:
+
+SELECT CURRENT_DATE, DATAVENDA, CURRENT_DATE – DATAVENDA DIFERENCA FROM TABELA
+
+# -----------------------------------------------------------------------------------------------------------------------------
+
+# Add days to a date (in the examples below, 7 days are added from the sales date)
+# Adicionar dias em uma data (nos exemplos a seguir, acrescentam-se 7 dias da data de vendas)
+
+SELECT DATAVENDA + 7 FROM TABELA
+
+# -----------------------------------------------------------------------------------------------------------------------------
+
+# We can also make comparisons with date, suppose we want all sales from today
+# Podemos também fazer comparações com data, suponhamos que quisesermos todas vendas de hoje
+
+SELECT NOME, DATAVENDA FROM TABELA
+WHERE DATAVENDA = CURRENT_DATE
+
+
+# -----------------------------------------------------------------------------------------------------------------------------
+
+# We want all records between the range of 01-01-2000 to today
+# Queremos todos os registros entre o intervalo de 01-01-2000 até hoje
+
+SELECT NOMNE, DATAVENDA FROM TABELA
+WHERE DATAVENDA BETWEEN ’01-01-2000’ AND CURRENT_DATE
+
+
+# -----------------------------------------------------------------------------------------------------------------------------
+
